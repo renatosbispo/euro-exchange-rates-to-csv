@@ -64,7 +64,7 @@ function main() {
 
     if (!$xml) {
         log_error("Failed to load XML from string.");
-        return;
+        return 1;
     }
 
     $xml_data_root = $xml->Cube->Cube;
@@ -79,6 +79,8 @@ function main() {
     $csv_headers = ["Currency", "Rate"];
     save_to_csv($csv_headers, $euro_exchange_rates, "$output_dir/euro-exchange-rates-$date");
     echo "CSV file saved to output folder." . PHP_EOL;
+
+    return 0;
 }
 
 main();
