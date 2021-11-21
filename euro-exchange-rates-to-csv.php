@@ -64,7 +64,7 @@ function main() {
 
     if (!$xml) {
         log_error("Failed to load XML from string.");
-        exit();
+        return;
     }
 
     $xml_data_root = $xml->Cube->Cube;
